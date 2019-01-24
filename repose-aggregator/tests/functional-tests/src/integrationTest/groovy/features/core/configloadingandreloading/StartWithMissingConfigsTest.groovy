@@ -55,14 +55,14 @@ class StartWithMissingConfigsTest extends ReposeValveTest {
                 waitOnJmxAfterStarting: false)
         repose.waitForNon500FromUrl(reposeEndpoint)
 
-
+//todo: do something with this test?
 
         expect: "if the file is missing then the default should produce 200's"
         deproxy.makeRequest(url: reposeEndpoint).receivedResponse.code == "200"
 
         where:
         componentLabel       | _
-        "response-messaging" | _
+        "metrics" | _
     }
 }
 
